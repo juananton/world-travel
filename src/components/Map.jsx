@@ -8,10 +8,10 @@ import {
   useMapEvents,
 } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
+import { useCities } from '../Hooks/useCities';
 import { useGeolocation } from '../Hooks/useGeolocation';
 import { useUrlPosition } from '../Hooks/useUrlPosition';
 import Button from './Button';
-import { useCities } from './Contexts/CitiesContex';
 import styles from './Map.module.css';
 
 function Map() {

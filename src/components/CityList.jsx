@@ -1,6 +1,6 @@
+import { useCities } from '../Hooks/useCities';
 import CityItem from './CityItem';
 import styles from './CityList.module.css';
-import { useCities } from './Contexts/CitiesContex';
 import Message from './Message';
 import Spinner from './Spinner';
 

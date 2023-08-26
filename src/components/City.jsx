@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCities } from '../Hooks/useCities';
 import BackButton from './BackButton';
 import styles from './City.module.css';
-import { useCities } from './Contexts/CitiesContex';
 import Spinner from './Spinner';
 
 const formatDate = date =>
@@ -22,7 +22,7 @@ function City() {
     function () {
       getCity(id);
     },
-    [id]
+    [getCity, id]
   );
 
   const { cityName, emoji, date, notes } = currentCity;
