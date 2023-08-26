@@ -1,8 +1,13 @@
 import { createContext, useEffect, useReducer } from 'react';
 
-export const CitiesContext = createContext();
-
 const BASE_URL = 'http://localhost:4000';
+
+const initialState = {
+  cities: [],
+  isLoading: false,
+  currentCity: {},
+  error: '',
+};
 
 function reducer(state, action) {
   switch (action.type) {
@@ -48,14 +53,9 @@ function reducer(state, action) {
   }
 }
 
-const initialState = {
-  cities: [],
-  isLoading: false,
-  currentCity: {},
-  error: '',
-};
+export const CitiesContext = createContext();
 
-function CitiesProvider({ children }) {
+export function CitiesProvider({ children }) {
   const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(
     reducer,
     initialState
@@ -140,5 +140,3 @@ function CitiesProvider({ children }) {
     </CitiesContext.Provider>
   );
 }
-
-export { CitiesProvider };
